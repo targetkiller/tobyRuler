@@ -30,4 +30,4 @@
 #display .bg1{background-image: url(img/bg01.png);opacity: 1;}
 #display .bg2{background-image: url(img/bg02.png);left: 200px;opacity: 0;}
 #display .front .page1{background-image: url(img/01.png);opacity: 1;}
-#display .front .page2{background-image: url(img/02.png);opacity: 0;}
+#display .front .page2{background-image: url(img/02.png);opacity: 0;left: 226px;}
