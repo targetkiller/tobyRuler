@@ -1,0 +1,12 @@
+/*
+ * @name:tobyRuler;
+ * @author:tqtan;
+ * @date:2014-04-14;
+ * @content:展示页样式;
+*/
+
+#display{background-color: #eee;height: 100%;}
+#display img{display: block;/*解决底部3px*/}
+#display .bg{}
+#display .frame{}
+#display .opt{}

@@ -1,0 +1,25 @@
+/*
+ * @name:tobyRuler;
+ * @author:tqtan;
+ * @date:2014-04-14;
+ * @content:头部样式;
+*/
+
+body{margin: 0;-webkit-font-smoothing: antialiased;}
+
+header{height: 50px;width: 100%;background-color: #444;}
+header .logo{position: absolute;width: 120px;height: 40px;top: 5px;}
+header .logo a{display: inline-block;width: 100%;height: 100%;}
+header .logo img{display: inline-block;width: 100%;height: 100%;}
+header nav{}
+header nav ul{list-style: none;position: absolute;right: 0;top: 0;margin: 0;padding-left: 0;}
+header nav ul li{display: inline-block;width: 55px;height: 50px;}
+header nav ul li a{display: inline-block;width: 100%;height: 100%;line-height: 50px;text-decoration: none;color: #fff;font-size: 14px;text-align: right;}
+header nav ul li a:hover{color: #ddd;}
+
+footer{height: 100px;width: 100%;background-color: #fff;padding: 15px;}
+footer p{margin: 0;color: #999;position: absolute;right: 0;bottom: 0px;}
+footer p a{color: #444;text-decoration: none;}
+
+.inner{width: 980px;margin: 0 auto;position: relative;height: 100%;}
+
