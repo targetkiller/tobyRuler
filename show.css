@@ -5,8 +5,29 @@
  * @content:展示页样式;
 */
 
+/*尺寸
+ * bg:2880x1880->980x640;
+ * iphone:971x1781->330x605;
+ * page:816x1448->277x492;
+ * begin_btn:428x428->145x145;
+ * hand:272x282->92x95;
+*/
+
 #display{background-color: #eee;height: 100%;}
 #display img{display: block;/*解决底部3px*/}
-#display .bg{}
-#display .frame{}
-#display .opt{}
+#display .frame{position: relative;height: 640px;width: 980px;overflow: hidden;}
+#display .bg{width: 980px;height: 640px;background-size: 980px 640px;position: absolute;}
+#display .front{position: absolute;top: 0;left: 0;width: 100%;height: 100%}
+#display .front .iphone{background-image: url(img/iphone.png);width: 330px;height: 605px;
+	background-size: 330px 605px;position: relative;left: 325px;top: 35px;}
+#display .front .page{width: 277px;height: 492px;background-size: 277px 492px;position: absolute;bottom: 11px;left: 26px;}
+#display .front .begin-btn{background-image: url(img/begin_btn.png);background-size: 145px 145px;width: 145px;height: 145px;
+	position: absolute;top: 198px;left: 92.5px;cursor: pointer;opacity: 0.9;transition:all 0.1s ease-in;}
+#display .front .begin-btn:hover{opacity: 1.0;}
+#display .hand{background-image: url(img/hand.png);background-size: 92px 95px;width: 92px;height: 95px;top: 0;left: 0;position: absolute;}
+#display .hide{display: none;}
+
+#display .bg1{background-image: url(img/bg01.png);opacity: 1;}
+#display .bg2{background-image: url(img/bg02.png);left: 200px;opacity: 0;}
+#display .front .page1{background-image: url(img/01.png);opacity: 1;}
+#display .front .page2{background-image: url(img/02.png);opacity: 0;}
