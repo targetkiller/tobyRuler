@@ -13,9 +13,16 @@ var pgChangeOffset = 200;//页面切换位移
 
 // 第一帧：开始按钮
 $('.begin-btn').click(function(){
+
+	if(nowPageIndex === 35){
+		nowPageIndex =1;
+		nowBgIndex =1;
+		window.location.reload();
+	}
+
 	// 变换背景
-	var $bgbefore = $('.bg1');
-	var $bgafter = $('.bg2');
+	var $bgbefore = $('.bg'+nowBgIndex);
+	var $bgafter = $('.bg'+(nowBgIndex+1));
 	$bgbefore.animate({
 		left:'-='+bgChangeOffset,
 		opacity: 0.2},
@@ -25,14 +32,15 @@ $('.begin-btn').click(function(){
 
 	$bgafter.removeClass('hide');
 	$bgafter.animate({
-			left:'-='+bgChangeOffset,
-			opacity: 1},
-			bgChangeVelocity, function() {
+		left:'-='+bgChangeOffset,
+		opacity: 1},
+		bgChangeVelocity, function() {
+		nowBgIndex++;
 	});
 
 	// 变换页面
-	var $pgbefore = $('.page1');
-	var $pgafter = $('.page2');
+	var $pgbefore = $('.page'+nowPageIndex);
+	var $pgafter = $('.page'+(nowPageIndex+1));
 	$pgbefore.animate({
 		left:'-='+pgChangeOffset,
 		opacity: 0.2},
@@ -42,8 +50,9 @@ $('.begin-btn').click(function(){
 
 	$pgafter.removeClass('hide');
 	$pgafter.animate({
-			left:'-='+pgChangeOffset,
-			opacity: 1},
-			pgChangeVelocity, function() {
+		left:'-='+pgChangeOffset,
+		opacity: 1},
+		pgChangeVelocity, function() {
+		nowPageIndex++;
 	});	
 });
