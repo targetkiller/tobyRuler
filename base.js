@@ -9,12 +9,18 @@ var nowBgIndex = 1;
 var bgChangeVelocity = 500;//背景切换速度
 var bgChangeOffset = 200;//背景切换位移
 var pgChangeVelocity = 500;//页面切换速度
-var pgChangeOffset = 200;//页面切换位移
+var pgChangeOffset = 280;//页面切换位移
+var finIndex = 35;//最后帧
 
 // 第一帧：开始按钮
 $('.begin-btn').click(function(){
+	var autoFrame = setInterval(function(){nextFrame();},1000);
+	$(this).addClass('hide');
+});
 
-	if(nowPageIndex === 35){
+function nextFrame(){
+	// 判断是否最后帧
+	if(nowPageIndex === finIndex){
 		nowPageIndex =1;
 		nowBgIndex =1;
 		window.location.reload();
@@ -55,4 +61,4 @@ $('.begin-btn').click(function(){
 		pgChangeVelocity, function() {
 		nowPageIndex++;
 	});	
-});
+}
