@@ -6,11 +6,12 @@
 */
 var nowPageIndex = 1;
 var nowBgIndex = 1;
-var bgChangeVelocity = 500;//背景切换速度
+var bgChangeVelocity = 800;//背景切换速度
 var bgChangeOffset = 200;//背景切换位移
-var pgChangeVelocity = 500;//页面切换速度
+var pgChangeVelocity = 800;//页面切换速度
 var pgChangeOffset = 280;//页面切换位移
 var finIndex = 35;//最后帧
+var showPageWait = 1000;//页面停顿时间
 var $opt = $('#opt');
 var $hand = $('#hand');
 var $clickdot = $('#clickdot');
@@ -24,37 +25,36 @@ $('.begin-btn').click(function(){
 
 // 展示开始
 function start(){
-	// 开始->移动到帧 用时800
-	// 初始位置 l888 t320
-	// 结束位置 l526 t320
-	handMove('526px','+=0',800,0,function(){
-
-		// 帧1->帧2 用时500 上次800
-		// 初始位置 l526 t320
-		// 结束为止 l406 t320
-		nextFrame();
-		handMove('406px','+=0',500,0,function(){
+	// 开始->移动到帧 pgChangeVelocity
+	// 初始位置 l888 t320 结束位置 l526 t320
+	handMove('526px','+=0',pgChangeVelocity,0,0,function(){
+		// 帧1->帧2 用时pgChangeVelocity
+		// 初始位置 l526 t320 结束为止 l406 t320
+		nextFrame(0);
+		handMove('406px','+=0',pgChangeVelocity,0,1,function(){
 			handReset('526px','+=0');
-
-			// 帧2->帧3 用时500 上次1300
-			// 初始位置 l526 t320
-			// 结束为止 l406 t320
-			nextFrame();
-			handMove('406px','+=0',500,0,function(){
+			// 帧2->帧3 用时pgChangeVelocity
+			// 初始位置 l526 t320 结束为止 l406 t320
+			nextFrame(showPageWait);
+			handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
 				handReset('526px','+=0');
-
-				// 帧3->帧4 用时500 上次1800
-				// 初始位置 l526 t320
-				// 结束为止 l406 t320
-				nextFrame();
-				handMove('406px','+=0',500,0,function(){
+				// 帧3->帧4 用时pgChangeVelocity
+				// 初始位置 l526 t320 结束为止 l406 t320
+				nextFrame(showPageWait);
+				handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
 					handReset('526px','+=0');
-
-					// 帧4->帧5 用时500 上次2300
-					// 初始位置 l526 t320
-					// 结束为止 l406 t320
-					nextFrame();
-					handMove('406px','+=0',500,0,function(){handReset('526px','+=0');});
+					// 帧4->帧5 用时pgChangeVelocity 
+					// 初始位置 l526 t320 结束为止 l406 t320
+					nextFrame(showPageWait);
+					handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
+						handReset('526px','+=0');
+						// 帧5->帧6 用时pgChangeVelocity
+						// 初始位置 l526 t320 结束为止 l406 t320
+						nextFrame(showPageWait);
+						handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
+							handReset('526px','+=0');
+						});
+					});
 				});
 			});
 		});
@@ -62,9 +62,12 @@ function start(){
 }
 
 // 移动操作手
-// l:left,t:top,d:duration,dl:delay
-function handMove(l,t,d,dl,callback){
+// l:left,t:top,d:duration,dl:delay,dot:1/0 是否显示点
+function handMove(l,t,d,dl,dot,callback){
 	$opt.removeClass('hide');
+	if(dot==1){
+		$clickdot.removeClass('hide');
+	}
 	var _l = l||'+=0';
 	var _t = t||'+=0';
 	var _d = d||0;
@@ -74,8 +77,6 @@ function handMove(l,t,d,dl,callback){
 		top: _t,
 		opacity: 1},
 		_d, function() {
-		// 显示操作点
-		$clickdot.removeClass('hide');
 		if(callback && (callback  instanceof Function)){
             callback();//回调
         }
@@ -87,7 +88,9 @@ function handMove(l,t,d,dl,callback){
 function handReset(l,t,callback){
 	var _l = l||'+=0';
 	var _t = t||'+=0';
-	$opt.css({left:_l,top:_t,opacity:0.5}).addClass('hide');
+	$opt.addClass('hide');
+	$opt.css({left:_l,top:_t,opacity:0.5})
+	$clickdot.addClass('hide');
 }
 
 // 切换下一帧

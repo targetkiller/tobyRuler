@@ -29,7 +29,7 @@
 #display .front .begin-btn:hover{opacity: 1.0;}
 #display #opt{position: relative;left: 888px;top: 320px;z-index: 9999;opacity: 0.5;}
 #display #opt #hand{background-image: url(img/hand.png);background-size: 92px 95px;width: 92px;height: 95px;position: absolute;left: 5px;top: 6px;z-index: 2}
-#display #opt #clickdot{height: 20px;width: 20px;border-radius: 10px;background-color: #770000;position: absolute;z-index: 1}
+#display #opt #clickdot{height: 20px;width: 20px;border-radius: 10px;background-color: #770000;position: absolute;z-index: 1;opacity: 0.7}
 #display .hide{display: none;}
 
 #display .bg1{background-image: url(img/bg01.png);opacity: 1;}
