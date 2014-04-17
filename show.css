@@ -40,33 +40,31 @@
 #display .bg6{background-image: url(img/bg06.png);left: 200px;opacity: 0;}
 #display .bg7{background-image: url(img/bg07.png);left: 200px;opacity: 0;}
 #display .bg8{background-image: url(img/bg0809.png);left: 200px;opacity: 0;}
-#display .bg9{background-image: url(img/bg0809.png);left: 200px;opacity: 0;}
-#display .bg10{background-image: url(img/bg10.png);left: 200px;opacity: 0;}
-#display .bg11{background-image: url(img/bg11.png);left: 200px;opacity: 0;}
+#display .bg9{background-image: url(img/bg10.png);left: 200px;opacity: 0;}
+#display .bg10{background-image: url(img/bg11.png);left: 200px;opacity: 0;}
+#display .bg11{background-image: url(img/bg12131415.png);left: 200px;opacity: 0;}
 #display .bg12{background-image: url(img/bg12131415.png);left: 200px;opacity: 0;}
 #display .bg13{background-image: url(img/bg12131415.png);left: 200px;opacity: 0;}
 #display .bg14{background-image: url(img/bg12131415.png);left: 200px;opacity: 0;}
-#display .bg15{background-image: url(img/bg12131415.png);left: 200px;opacity: 0;}
-#display .bg16{background-image: url(img/bg1617.png);left: 200px;opacity: 0;}
-#display .bg17{background-image: url(img/bg1617.png);left: 200px;opacity: 0;}
-#display .bg18{background-image: url(img/bg18.png);left: 200px;opacity: 0;}
-#display .bg19{background-image: url(img/bg19.png);left: 200px;opacity: 0;}
+#display .bg15{background-image: url(img/bg1617.png);left: 200px;opacity: 0;}
+#display .bg16{background-image: url(img/bg18.png);left: 200px;opacity: 0;}
+#display .bg17{background-image: url(img/bg19.png);left: 200px;opacity: 0;}
+#display .bg18{background-image: url(img/bg20212223.png);left: 200px;opacity: 0;}
+#display .bg19{background-image: url(img/bg20212223.png);left: 200px;opacity: 0;}
 #display .bg20{background-image: url(img/bg20212223.png);left: 200px;opacity: 0;}
 #display .bg21{background-image: url(img/bg20212223.png);left: 200px;opacity: 0;}
-#display .bg22{background-image: url(img/bg20212223.png);left: 200px;opacity: 0;}
-#display .bg23{background-image: url(img/bg20212223.png);left: 200px;opacity: 0;}
-#display .bg24{background-image: url(img/bg24.png);left: 200px;opacity: 0;}
-#display .bg25{background-image: url(img/bg2526.png);left: 200px;opacity: 0;}
-#display .bg26{background-image: url(img/bg2526.png);left: 200px;opacity: 0;}
-#display .bg27{background-image: url(img/bg27.png);left: 200px;opacity: 0;}
+#display .bg22{background-image: url(img/bg24.png);left: 200px;opacity: 0;}
+#display .bg23{background-image: url(img/bg2526.png);left: 200px;opacity: 0;}
+#display .bg24{background-image: url(img/bg2526.png);left: 200px;opacity: 0;}
+#display .bg25{background-image: url(img/bg27.png);left: 200px;opacity: 0;}
+#display .bg26{background-image: url(img/bg28293031.png);left: 200px;opacity: 0;}
+#display .bg27{background-image: url(img/bg28293031.png);left: 200px;opacity: 0;}
 #display .bg28{background-image: url(img/bg28293031.png);left: 200px;opacity: 0;}
 #display .bg29{background-image: url(img/bg28293031.png);left: 200px;opacity: 0;}
-#display .bg30{background-image: url(img/bg28293031.png);left: 200px;opacity: 0;}
-#display .bg31{background-image: url(img/bg28293031.png);left: 200px;opacity: 0;}
+#display .bg30{background-image: url(img/bg32333435.png);left: 200px;opacity: 0;}
+#display .bg31{background-image: url(img/bg32333435.png);left: 200px;opacity: 0;}
 #display .bg32{background-image: url(img/bg32333435.png);left: 200px;opacity: 0;}
 #display .bg33{background-image: url(img/bg32333435.png);left: 200px;opacity: 0;}
-#display .bg34{background-image: url(img/bg32333435.png);left: 200px;opacity: 0;}
-#display .bg35{background-image: url(img/bg32333435.png);left: 200px;opacity: 0;}
 #display .front .page1{background-image: url(img/01.png);opacity: 1;}
 #display .front .page2{background-image: url(img/02.png);opacity: 0;left: 280px;}
 #display .front .page3{background-image: url(img/03.png);opacity: 0;left: 280px;}
@@ -75,6 +73,7 @@
 #display .front .page6{background-image: url(img/06.png);opacity: 0;left: 280px;}
 #display .front .page7{background-image: url(img/07.png);opacity: 0;left: 280px;}
 #display .front .page8{background-image: url(img/08.png);opacity: 0;left: 280px;}
+#display .front .page8info{background-image: url(img/08info.png);}
 #display .front .page9{background-image: url(img/09.png);opacity: 0;left: 280px;}
 #display .front .page10{background-image: url(img/10.png);opacity: 0;left: 280px;}
 #display .front .page11{background-image: url(img/11.png);opacity: 0;left: 280px;}
@@ -82,6 +81,7 @@
 #display .front .page13{background-image: url(img/13.png);opacity: 0;left: 280px;}
 #display .front .page14{background-image: url(img/14.png);opacity: 0;left: 280px;}
 #display .front .page15{background-image: url(img/15.png);opacity: 0;left: 280px;}
+#display .front .page15info{background-image: url(img/15info.png);}
 #display .front .page16{background-image: url(img/16.png);opacity: 0;left: 280px;}
 #display .front .page17{background-image: url(img/17.png);opacity: 0;left: 280px;}
 #display .front .page18{background-image: url(img/18.png);opacity: 0;left: 280px;}
@@ -100,5 +100,9 @@
 #display .front .page31{background-image: url(img/31.png);opacity: 0;left: 280px;}
 #display .front .page32{background-image: url(img/32.png);opacity: 0;left: 280px;}
 #display .front .page33{background-image: url(img/33.png);opacity: 0;left: 280px;}
-#display .front .page34{background-image: url(img/34.png);opacity: 0;left: 280px;}
-#display .front .page35{background-image: url(img/35.png);opacity: 0;left: 280px;}
+
+#display .front .pg6-input{position: absolute;top: 185px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
+#display .front .pg6-input:focus{outline: none}
+#display .front .pg6-input2{position: absolute;top: 225px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
+#display .front .pg6-input2:focus{outline: none}
+
