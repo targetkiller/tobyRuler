@@ -6,14 +6,19 @@
 */
 
 /*尺寸
+ * scale:0.33946078431373;
  * bg:2880x1880->980x640;
  * iphone:971x1781->330x605;
  * page:816x1448->277x492;
  * begin_btn:428x428->145x145;
  * hand:272x282->92x95;
- * tab_heaa:816x61->277x;
+ * tab_heaa:816x61->277x19;
+ * 08dot:126x66->50x30;
+ * 08rule:34x255->11x86;
+ * 08dot:126x66->55x55;
 */
 
+/* 基本属性 */
 #display{background-color: #eee;height: 100%;}
 #display img{display: block;/*解决底部3px*/}
 #display .frame{position: relative;height: 640px;width: 980px;overflow: hidden;}
@@ -30,8 +35,31 @@
 #display #opt{position: relative;left: 888px;top: 320px;z-index: 9999;opacity: 0.5;}
 #display #opt #hand{background-image: url(img/hand.png);background-size: 92px 95px;width: 92px;height: 95px;position: absolute;left: 5px;top: 6px;z-index: 2}
 #display #opt #clickdot{height: 20px;width: 20px;border-radius: 10px;background-color: #770000;position: absolute;z-index: 1;opacity: 0.7}
-#display .hide{display: none;}
+#display .hide{display: none!important;}
 
+/* 异化场景 */
+#display .front .pg6-input{position: absolute;top: 185px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
+#display .front .pg6-input:focus{outline: none}
+#display .front .pg6-input2{position: absolute;top: 225px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
+#display .front .pg6-input2:focus{outline: none}
+#display .front .focus-input{position: absolute;top: 138px;border: none;width: 222px;left: 14px;height: 35px;line-height: 20px;border-radius: 6px;font-size: 16px;text-align: left;background-color: transparent;}
+#display .front .focus-input:focus{outline: none;}
+#display .front .page8dot-wrap{position: absolute;width: 277px;height: 91px;left: 0;top: 400px;overflow: hidden;}
+#display .front .page8dot{background-image: url(img/08dot.png);width: 50px;height: 30px;background-size: 50px 30px;top: 0px;left: 112px;position: absolute;}
+#display .front .page8rule{background-image: url(img/08rule.png);width: 15px;height: 109px;background-size: 15px 109px;top: 63px;left: 30px;position: absolute;}
+#display .front .page8cover{top: 0;left: 0;background-color: #fff;opacity: 0.7;width: 277px;height: 492px;z-index: 9999;}
+#display .front .page15dot-wrap{position: absolute;width: 277px;height: 91px;left: 0;top: 400px;overflow: hidden;}
+#display .front .page15dot{background-image: url(img/15dot.png);width: 55px;height: 55px;background-size: 55px 55px;top: 19px;left: 111px;position: absolute;}
+#display .front .page15input-wrap{position: absolute;width: 277px;height: 109px;left: 0;top: 63px;overflow: hidden;}
+#display .front .page15input1,
+#display .front .page15input2,
+#display .front .page15input3{position: absolute;width: 89px;height: 109px;text-align: center;line-height: 109px;font-size: 60px;font-weight: lighter;}
+#display .front .page15input1{left: 0;top: 0px;}
+#display .front .page15input2{left: 94px;top: 0px;}
+#display .front .page15input3{left: 187px;top: 0px;}
+#display .front .page15cover{top: 0;left: 0;background-color: #fff;opacity: 0.7;width: 277px;height: 492px;z-index: 9999;}
+
+/* 基本背景 */
 #display .bg1{background-image: url(img/bg01.png);opacity: 1;}
 #display .bg2{background-image: url(img/bg02.png);left: 200px;opacity: 0;}
 #display .bg3{background-image: url(img/bg03.png);left: 200px;opacity: 0;}
@@ -77,7 +105,7 @@
 #display .front .page9{background-image: url(img/09.png);opacity: 0;left: 280px;}
 #display .front .page10{background-image: url(img/10.png);opacity: 0;left: 280px;}
 #display .front .page11{background-image: url(img/11.png);opacity: 0;left: 280px;}
-#display .front .page12{background-image: url(img/12.png);opacity: 0;left: 280px;}
+#display .front .page11info{background-image: url(img/11info.png);}
 #display .front .page13{background-image: url(img/13.png);opacity: 0;left: 280px;}
 #display .front .page14{background-image: url(img/14.png);opacity: 0;left: 280px;}
 #display .front .page15{background-image: url(img/15.png);opacity: 0;left: 280px;}
@@ -85,7 +113,7 @@
 #display .front .page16{background-image: url(img/16.png);opacity: 0;left: 280px;}
 #display .front .page17{background-image: url(img/17.png);opacity: 0;left: 280px;}
 #display .front .page18{background-image: url(img/18.png);opacity: 0;left: 280px;}
-#display .front .page19{background-image: url(img/19.png);opacity: 0;left: 280px;}
+#display .front .page18info{background-image: url(img/18info.png);}
 #display .front .page20{background-image: url(img/20.png);opacity: 0;left: 280px;}
 #display .front .page21{background-image: url(img/21.png);opacity: 0;left: 280px;}
 #display .front .page22{background-image: url(img/22.png);opacity: 0;left: 280px;}
@@ -93,7 +121,7 @@
 #display .front .page24{background-image: url(img/24.png);opacity: 0;left: 280px;}
 #display .front .page25{background-image: url(img/25.png);opacity: 0;left: 280px;}
 #display .front .page26{background-image: url(img/26.png);opacity: 0;left: 280px;}
-#display .front .page27{background-image: url(img/27.png);opacity: 0;left: 280px;}
+#display .front .page26info{background-image: url(img/26info.png);opacity: 0;left: 280px;}
 #display .front .page28{background-image: url(img/28.png);opacity: 0;left: 280px;}
 #display .front .page29{background-image: url(img/29.png);opacity: 0;left: 280px;}
 #display .front .page30{background-image: url(img/30.png);opacity: 0;left: 280px;}
@@ -101,8 +129,5 @@
 #display .front .page32{background-image: url(img/32.png);opacity: 0;left: 280px;}
 #display .front .page33{background-image: url(img/33.png);opacity: 0;left: 280px;}
 
-#display .front .pg6-input{position: absolute;top: 185px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
-#display .front .pg6-input:focus{outline: none}
-#display .front .pg6-input2{position: absolute;top: 225px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
-#display .front .pg6-input2:focus{outline: none}
+
 

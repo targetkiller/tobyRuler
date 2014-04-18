@@ -5,7 +5,11 @@
  * @content:头部样式;
 */
 
-body{margin: 0;-webkit-font-smoothing: antialiased;font-family: font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3";}
+body{margin: 0;-webkit-font-smoothing: antialiased;
+	font-family: 'Helvetica Neue', Helvetica, 'Source Sans Pro', 'Hiragino Sans GB', 'Microsoft Yahei', arial, sans-serif;
+	/*font-family: font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3";*/
+	/*font-weight: lighter;*/
+}
 
 header{height: 50px;width: 100%;background-color: #444;}
 header .logo{position: absolute;width: 120px;height: 40px;top: 5px;}
