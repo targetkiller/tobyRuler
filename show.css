@@ -27,14 +27,25 @@
 #display .front .iphone{background-image: url(img/iphone.png);width: 330px;height: 605px;
 	background-size: 330px 605px;position: relative;left: 325px;top: 35px;}
 #display .front .iphone-inner{position: relative;width: 277px;height: 492px;top: 102px;left: 26px;overflow: hidden;}
-#display .front .tab-head{position: absolute;width: 277px;height: 19px;top: 0px;left: 0px;background-image: url(img/tab_head.png);background-size: 277px 19px;z-index: 2}
+#display .front .tab-head{position: absolute;width: 277px;height: 19px;top: 102px;left: 26px;background-image: url(img/tab_head.png);background-size: 277px 19px;z-index: 2}
 #display .front .page{width: 277px;height: 492px;background-size: 277px 492px;position: absolute;top: 0px;left: 0px;z-index: 1}
 #display .front .begin-btn{background-image: url(img/begin_btn.png);background-size: 145px 145px;width: 145px;height: 145px;
-	position: absolute;top: 118px;left: 66.5px;cursor: pointer;opacity: 0.9;transition:all 0.1s ease-in;z-index: 3;}
+	position: absolute;top: 230px;left: 92.5px;cursor: pointer;opacity: 0.9;transition:all 0.1s ease-in;z-index: 3;}
 #display .front .begin-btn:hover{opacity: 1.0;}
 #display #opt{position: relative;left: 888px;top: 320px;z-index: 9999;opacity: 0.5;}
 #display #opt #hand{background-image: url(img/hand.png);background-size: 92px 95px;width: 92px;height: 95px;position: absolute;left: 5px;top: 6px;z-index: 2}
 #display #opt #clickdot{height: 20px;width: 20px;border-radius: 10px;background-color: #770000;position: absolute;z-index: 1;opacity: 0.7}
+#display .front .pagebackground{width: 277px;height: 492px;background-color: #fff;position: absolute;left: 26px;top: 102px;}
+#display .front .end{width: 277px;height: 492px;background-color: #fff;position: absolute;left: 26px;top: 102px;}
+#display .front .end .end-input1,
+#display .front .end .end-input2{position: absolute;border: none;width: 275px;left: 0px;height: 55px;line-height: 25px;font-weight: lighter;font-family: 'Helvetica Neue';text-align: center;}
+#display .front .end .end-input1:focus,
+#display .front .end .end-input2:focus{outline: none;}
+#display .front .end .end-input1{top: 135px;font-size: 35px;color: #077;}
+#display .front .end .end-input2{top: 185px;font-size: 20px;}
+#display .front .end #again{color: #fff;background-color: #077;position: absolute;left: 90px;top: 255px;width: 87px;height: 30px;line-height: 27px;font-size: 25px;opacity: 0;cursor: pointer;
+	font-weight: lighter;font-family: 'Helvetica Neue';text-align: center;padding: 2px 0;transition:all .2s ease-in;-webkit-transition:all .2s ease-in;}
+#display .front .end #again:hover{background-color: #099;}
 
 /* 异化场景 */
 #display .front .pg6-input{position: absolute;top: 185px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
@@ -67,7 +78,6 @@
 #display .front .page23dotpg{background-image: url(img/23dotpg.png);background-size: 50px 30px;width: 50px;height: 30px;position: absolute;top: 145px;left: 28px;}
 #display .front .page23dotpw{background-image: url(img/23dotpw.png);background-size: 50px 30px;width: 50px;height: 30px;position: absolute;top: 145px;left: 28px;}
 #display .front .page23human{background-image: url(img/23human.png);background-size: 100px 295px;width: 100px;height: 295px;position: absolute;top: 88px;left: 136px;}
-#display .front .pagebackground{width: 277px;height: 492px;background-color: #fff;position: absolute;left: 0;top: 0;}
 #display .front .page23cover{top: 0;left: 0;background-color: #fff;opacity: 0.7;width: 277px;height: 492px;z-index: 9999;}
 
 /* 基本背景 */
@@ -132,7 +142,7 @@
 #display .front .page24{background-image: url(img/24.png);opacity: 0;left: 280px;}
 #display .front .page25{background-image: url(img/25.png);opacity: 0;left: 280px;}
 #display .front .page26{background-image: url(img/26.png);opacity: 0;left: 280px;}
-#display .front .page26info{background-image: url(img/26info.png);opacity: 0;left: 280px;}
+#display .front .page26info{background-image: url(img/26info.png);}
 #display .front .page28{background-image: url(img/28.png);opacity: 0;left: 280px;}
 #display .front .page29{background-image: url(img/29.png);opacity: 0;left: 280px;}
 #display .front .page30{background-image: url(img/30.png);opacity: 0;left: 280px;}

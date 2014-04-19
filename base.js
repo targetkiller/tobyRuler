@@ -9,19 +9,12 @@ var pgChangeVelocity = 800;//页面切换速度
 var showPageWait = 200;//页面停顿时间
 var inputTextVelocity = 200;//登录框打字速度
 var infoShowVelocity = 400;//提示框显示速度
-var infoShowDuration = 4000;//提示框持续时间
+var infoShowDuration = 3500;//提示框持续时间
 var numTextVelocity = 5;//数字变动速度
 var numValue = 160;//测身高时候的值
 var dotMoveSpeed = 500;//测身材比例时候的按钮移动速度
 var barMoveSpeed = 1000;//测身材比例时候的bar移动速度
-
-//调试用速度
-// var bgChangeVelocity = 0;
-// var pgChangeVelocity = 0;
-// var showPageWait = 0;
-// var inputTextVelocity = 0;
-// var infoShowVelocity = 0;
-// var infoShowDuration = 0;
+var endTextSpeed = 100;//最后现实字的速度
 
 var nowPageIndex = 1;
 var nowBgIndex = 1;
@@ -37,6 +30,10 @@ $('.begin-btn').click(function(){
 	$(this).addClass('hide');
 	$('#music')[0].play();
 	start();
+});
+
+$('#again').click(function(){
+	window.location.reload();
 });
 
 // 展示开始
@@ -203,7 +200,99 @@ function start(){
 																																										handReset('+=0','+=0');
 																																										// 身材比例检测动画
 																																										pg23act();
+																																										// 帧23->帧24
 																																										nextFrame(barMoveSpeed*2);
+																																										handMove('550px','505px',800,barMoveSpeed*2+pgChangeVelocity,1,function(){
+																																											handReset('+=0','+=0');
+																																											// 帧24->帧25
+																																											nextFrame(0);
+																																											handMove('372px','175px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																												handReset('+=0','+=0');
+																																												// 帧25->帧24
+																																												backFrame(0);
+																																												handMove('550px','455px',800,pgChangeVelocity,1,function(){
+																																													handReset('+=0','+=0');
+																																													// 帧24->帧26
+																																													nextFrame(0,2);
+																																													handMove('570px','338px',800,pgChangeVelocity,1,function(){
+																																														handReset('+=0','+=0');
+																																														// 帧26->帧26info
+																																														pginfoShow();
+																																														handMove('594px','172px',500,infoShowDuration+infoShowVelocity,1,function(){
+																																															handReset('+=0','+=0');
+																																															// 帧26info->帧26
+																																															pginfoHide();
+																																															handMove('604px','172px',800,infoShowVelocity,1,function(){
+																																																handReset('+=0','+=0');
+																																																// 帧26->帧29
+																																																nextFrame(0,3);
+																																																handMove('374px','172px',800,infoShowDuration+pgChangeVelocity,1,function(){
+																																																	handReset('+=0','+=0');
+																																																	// 帧29->帧26
+																																																	backFrame(0,-3);
+																																																	handMove('374px','172px',200,pgChangeVelocity,1,function(){
+																																																		handReset('+=0','+=0');
+																																																		// 帧26->帧24
+																																																		backFrame(0,-2);
+																																																		handMove('374px','172px',200,pgChangeVelocity,1,function(){
+																																																			handReset('+=0','+=0');
+																																																			// 帧24->帧23
+																																																			backFrame(0,-1);
+																																																			handMove('364px','172px',200,pgChangeVelocity,1,function(){
+																																																				handReset('+=0','+=0');
+																																																				// 帧23->帧7
+																																																				backFrame(0,-16);
+																																																				handMove('562px','520px',800,pgChangeVelocity,1,function(){
+																																																					handReset('+=0','+=0');
+																																																					// 帧7->帧30
+																																																					nextFrame(0,23);
+																																																					handMove('538px','410px',800,pgChangeVelocity,1,function(){
+																																																						handReset('+=0','+=0');
+																																																						// 帧30->帧32 好友列表
+																																																						nextFrame(0,2);
+																																																						handMove('374px','172px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																																							handReset('+=0','+=0');
+																																																							// 帧32->帧30
+																																																							backFrame(0,-2);
+																																																							handMove('538px','450px',800,pgChangeVelocity,1,function(){
+																																																								handReset('+=0','+=0');
+																																																								// 帧30->帧31
+																																																								nextFrame(0);
+																																																								handMove('374px','172px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																																									handReset('+=0','+=0');
+																																																									// 帧31->帧30
+																																																									backFrame(0.-1);
+																																																									handMove('538px','500px',800,pgChangeVelocity,1,function(){
+																																																										handReset('+=0','+=0');
+																																																										// 帧30->帧33
+																																																										nextFrame(0,3);
+																																																										handMove('374px','172px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																																											handReset('+=0','+=0');
+																																																											// 帧33->帧30
+																																																											backFrame(0,-3);
+																																																											handMove('364px','172px',800,pgChangeVelocity,1,function(){
+																																																												handReset('+=0','+=0');
+																																																												// 帧30->帧7
+																																																												backFrame(0,-23);
+																																																												end();
+																																																											});
+																																																										});
+																																																									});
+																																																								});
+																																																							});
+																																																						});
+																																																					});
+																																																				});
+																																																			});
+																																																		});
+																																																	});
+																																																});
+																																															});
+																																														});
+																																													});
+																																												});
+																																											});
+																																										});
 																																									});
 																																								});
 																																							});
@@ -247,6 +336,60 @@ function start(){
 	});
 }
 
+// 结束动画
+function end(){
+	var $end = $('.end');
+	var $opt = $('#opt');//操作手掌
+	var $inner = $('.iphone-inner');//操作手掌
+	var $endinput1 = $('.end-input1');//操作手掌
+	var $endinput2 = $('.end-input2');//操作手掌
+	var text1 = "TobyRuler".slice('');
+	var text2 = "care your life, care your self.".slice('');
+	var endinput1Index = 0;
+	var endinput2Index = 0;
+	var endinput1Len = text1.length;
+	var endinput2Len = text2.length;
+
+	// 开始结束层
+	$end.removeClass('hide');
+
+	// 手掌隐藏
+	$opt.animate({
+		opacity: 0},
+		1200, function() {
+		$(this).addClass('hide');
+	});
+
+	// 内容隐藏
+	$inner.animate({
+		opacity: 0},
+		1200, function() {
+		$(this).addClass('hide');
+		// 输入框1
+		var endinput1Inter = setInterval(function(){
+			if(endinput1Index == (endinput1Len-1)){
+				clearInterval(endinput1Inter);
+				// 输入框1完后输入2开始
+				var endinput2Inter = setInterval(function(){
+					if(endinput2Index == (endinput2Len-1)){
+						clearInterval(endinput2Inter);
+						$('#again').animate({
+							opacity: 1},
+							300, function() {
+						});
+					}
+					var text = $endinput2.val()+text2[endinput2Index];
+					$endinput2.val(text);
+					endinput2Index++;
+				},endTextSpeed);
+			}
+			var text = $endinput1.val()+text1[endinput1Index];
+			$endinput1.val(text);
+			endinput1Index++;
+		},endTextSpeed);
+	});
+}
+
 // 身材比例选择框选中
 function pg23radioact(){
 	var $dot = $('.page23dot');//控制点
@@ -259,7 +402,6 @@ function pg23radioact(){
 	$opt.animate({
 		left: '+='+distance},
 		dotMoveSpeed, function() {
-		/* stuff to do after animation is complete */
 	});
 
 	// 按钮移动
@@ -292,32 +434,26 @@ function pg23act(){
 	$bar1.animate({
 		top: '+=40px'},
 		barMoveSpeed, function() {
-		/* stuff to do after animation is complete */
 	});
 	$bar2.animate({
 		top: '+=30px'},
 		barMoveSpeed, function() {
-		/* stuff to do after animation is complete */
 	});
 	$bar3.animate({
 		top: '-=40px'},
 		barMoveSpeed, function() {
-		/* stuff to do after animation is complete */
 	});
-	$bar1.delay(barMoveSpeed).animate({
+	$bar1.animate({
 		top: '-=40px'},
 		barMoveSpeed, function() {
-		/* stuff to do after animation is complete */
 	});
-	$bar2.delay(barMoveSpeed).animate({
+	$bar2.animate({
 		top: '+=20px'},
 		barMoveSpeed, function() {
-		/* stuff to do after animation is complete */
 	});
-	$bar3.delay(barMoveSpeed).animate({
+	$bar3.animate({
 		top: '+=40px'},
 		barMoveSpeed, function() {
-		/* stuff to do after animation is complete */
 	});
 }
 
@@ -344,19 +480,19 @@ function pg15act(){
 		300, function() {
 	});
 
-	$dot.delay(300).animate({
+	$dot.animate({
 		top: '+=1px',
 		left: '-=3px'},
 		300, function() {
 	});
 
-	$dot.delay(600).animate({
+	$dot.animate({
 		top: '-=2px',
 		left: '+=2px'},
 		300, function() {
 	});
 
-	$dot.delay(900).animate({
+	$dot.animate({
 		top: '+=3px',
 		left: '-=1px'},
 		300, function() {
@@ -412,19 +548,19 @@ function pg8act(callback){
 		300, function() {
 	});
 
-	$dot.delay(300).animate({
+	$dot.animate({
 		top: '-1px',
 		left: '-=3px'},
 		300, function() {
 	});
 
-	$dot.delay(600).animate({
+	$dot.animate({
 		top: '-2px',
 		left: '+=2px'},
 		300, function() {
 	});
 
-	$dot.delay(900).animate({
+	$dot.animate({
 		top: '0px',
 		left: '-=1px'},
 		300, function() {
@@ -589,7 +725,6 @@ function nextFrame(dl,dis){
 	if(nowPageIndex === finIndex){
 		nowPageIndex =1;
 		nowBgIndex =1;
-		window.location.reload();
 	}
 
 	// 变换背景
