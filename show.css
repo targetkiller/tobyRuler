@@ -35,7 +35,6 @@
 #display #opt{position: relative;left: 888px;top: 320px;z-index: 9999;opacity: 0.5;}
 #display #opt #hand{background-image: url(img/hand.png);background-size: 92px 95px;width: 92px;height: 95px;position: absolute;left: 5px;top: 6px;z-index: 2}
 #display #opt #clickdot{height: 20px;width: 20px;border-radius: 10px;background-color: #770000;position: absolute;z-index: 1;opacity: 0.7}
-#display .hide{display: none!important;}
 
 /* 异化场景 */
 #display .front .pg6-input{position: absolute;top: 185px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
@@ -58,6 +57,18 @@
 #display .front .page15input2{left: 94px;top: 0px;}
 #display .front .page15input3{left: 187px;top: 0px;}
 #display .front .page15cover{top: 0;left: 0;background-color: #fff;opacity: 0.7;width: 277px;height: 492px;z-index: 9999;}
+#display .front .page23bar1,
+#display .front .page23bar2,
+#display .front .page23bar3{background-image: url(img/23bar.png);background-size: 175px 10px;width: 175px;height: 10px;position: absolute;left: 95px;}
+#display .front .page23bar1{top: 85px;}
+#display .front .page23bar2{top: 201px;}
+#display .front .page23bar3{top: 372px;}
+#display .front .page23dot{background-image: url(img/23dot.png);background-size: 34px 32px;width: 34px;height: 32px;position: absolute;top: 146px;left: 28px;z-index: 3}
+#display .front .page23dotpg{background-image: url(img/23dotpg.png);background-size: 50px 30px;width: 50px;height: 30px;position: absolute;top: 145px;left: 28px;}
+#display .front .page23dotpw{background-image: url(img/23dotpw.png);background-size: 50px 30px;width: 50px;height: 30px;position: absolute;top: 145px;left: 28px;}
+#display .front .page23human{background-image: url(img/23human.png);background-size: 100px 295px;width: 100px;height: 295px;position: absolute;top: 88px;left: 136px;}
+#display .front .pagebackground{width: 277px;height: 492px;background-color: #fff;position: absolute;left: 0;top: 0;}
+#display .front .page23cover{top: 0;left: 0;background-color: #fff;opacity: 0.7;width: 277px;height: 492px;z-index: 9999;}
 
 /* 基本背景 */
 #display .bg1{background-image: url(img/bg01.png);opacity: 1;}

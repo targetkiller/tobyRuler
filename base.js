@@ -12,6 +12,8 @@ var infoShowVelocity = 400;//提示框显示速度
 var infoShowDuration = 4000;//提示框持续时间
 var numTextVelocity = 5;//数字变动速度
 var numValue = 160;//测身高时候的值
+var dotMoveSpeed = 500;//测身材比例时候的按钮移动速度
+var barMoveSpeed = 1000;//测身材比例时候的bar移动速度
 
 //调试用速度
 // var bgChangeVelocity = 0;
@@ -33,13 +35,14 @@ var $clickdot = $('#clickdot');
 // 开始按钮
 $('.begin-btn').click(function(){
 	$(this).addClass('hide');
+	$('#music')[0].play();
 	start();
 });
 
 // 展示开始
 function start(){
 	// 开始->移动到帧
-	handMove('375px','580px',800,0,1,function(){
+	handMove('375px','580px',1500,0,1,function(){
 		handReset('+=0','+=0');
 		// 帧1->帧2
 		nextFrame(0);
@@ -85,11 +88,12 @@ function start(){
 													pginfoHide(0);
 													handMove('480px','405px',800,infoShowVelocity,1,function(){
 														// handReset('+=0','+=0');
+														// 三围检测动画
 														pg8act(function(){
 															handReset('+=0','+=0');
 															// 帧8->帧9
 															nextFrame(0);
-															handMove('550px','505px',800,pgChangeVelocity+infoShowDuration,1,function(){
+															handMove('550px','505px',800,pgChangeVelocity,1,function(){
 																handReset('+=0','+=0');
 																// 帧9->帧10
 																nextFrame(0);
@@ -142,9 +146,10 @@ function start(){
 																												// 帧15info->帧15
 																												pginfoHide();
 																												handMove('480px','405px',800,infoShowVelocity,1,function(){
+																													// 身高检测动画
+																													pg15act();
 																													// handReset('+=0','+=0');
 																													// 帧15->帧16
-																													pg15act();
 																													nextFrame(numTextVelocity*numValue+infoShowVelocity+1500);
 																													handMove('550px','475px',800,numTextVelocity*numValue+infoShowVelocity+1500+pgChangeVelocity+500,1,function(){
 																														handReset('+=0','+=0');
@@ -188,8 +193,19 @@ function start(){
 																																							backFrame(0,-8);
 																																							handMove('584px','392px',800,pgChangeVelocity,1,function(){
 																																								handReset('+=0','+=0');
-																																								// 帧7->帧22
-																																								nextFrame(0,15);
+																																								// 帧7->帧23
+																																								nextFrame(0,16);
+																																								handMove('386px','289px',800,pgChangeVelocity,1,function(){
+																																									// handReset('+=0','+=0');
+																																									// 身材比例选项选择动画
+																																									pg23radioact();
+																																									handMove('486px','579px',800,dotMoveSpeed,1,function(){
+																																										handReset('+=0','+=0');
+																																										// 身材比例检测动画
+																																										pg23act();
+																																										nextFrame(barMoveSpeed*2);
+																																									});
+																																								});
 																																							});
 																																						});
 																																					});
@@ -228,6 +244,80 @@ function start(){
 				});
 			});
 		});
+	});
+}
+
+// 身材比例选择框选中
+function pg23radioact(){
+	var $dot = $('.page23dot');//控制点
+	var $dotpg = $('.page23dotpg');//控制开启状态
+	var $dotpw = $('.page23dotpw');//控制关闭状态
+	var $opt = $('#opt');//操作手掌同步右划
+	var distance = 49-28;//按钮移动的距离
+
+	// 手移动
+	$opt.animate({
+		left: '+='+distance},
+		dotMoveSpeed, function() {
+		/* stuff to do after animation is complete */
+	});
+
+	// 按钮移动
+	$dot.animate({
+		left: '+='+distance},
+		dotMoveSpeed, function() {
+		$dotpw.addClass('hide');
+		$dotpg.removeClass('hide');
+	});
+}
+
+// 身材比例测量动画
+function pg23act(){
+	var $bar1 = $('.page23bar1');//扫描线1
+	var $bar2 = $('.page23bar2');//扫描线2
+	var $bar3 = $('.page23bar3');//扫描线3
+	var $human = $('.page23human');//拍照模特
+	var $cover = $('.page23cover');//拍照闪屏
+
+	// 拍照闪屏
+	$cover.animate({
+		opacity: 0.9},
+		300, function() {
+		$(this).addClass('hide');
+		// 出现小人
+		$human.removeClass('hide');
+	});
+
+	// 移动bar
+	$bar1.animate({
+		top: '+=40px'},
+		barMoveSpeed, function() {
+		/* stuff to do after animation is complete */
+	});
+	$bar2.animate({
+		top: '+=30px'},
+		barMoveSpeed, function() {
+		/* stuff to do after animation is complete */
+	});
+	$bar3.animate({
+		top: '-=40px'},
+		barMoveSpeed, function() {
+		/* stuff to do after animation is complete */
+	});
+	$bar1.delay(barMoveSpeed).animate({
+		top: '-=40px'},
+		barMoveSpeed, function() {
+		/* stuff to do after animation is complete */
+	});
+	$bar2.delay(barMoveSpeed).animate({
+		top: '+=20px'},
+		barMoveSpeed, function() {
+		/* stuff to do after animation is complete */
+	});
+	$bar3.delay(barMoveSpeed).animate({
+		top: '+=40px'},
+		barMoveSpeed, function() {
+		/* stuff to do after animation is complete */
 	});
 }
 
@@ -536,10 +626,9 @@ function nextFrame(dl,dis){
 		opacity: 1},
 		pgChangeVelocity, function() {
 		nowPageIndex+=_dis;
+		// 14,21,29发表页
+		if(nowPageIndex==14||nowPageIndex==21||nowPageIndex==29){
+			$('.focus-input').focus().val(' ');
+		}
 	});	
-
-	// 14,21,29发表页
-	if(nowPageIndex === 14 || nowPageIndex === 21 || nowPageIndex ===29){
-		$('.focus-input').focus().val(' ');
-	}
 }

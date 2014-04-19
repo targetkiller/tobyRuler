@@ -26,4 +26,4 @@ footer p{margin: 0;color: #999;position: absolute;right: 0;bottom: 0px;}
 footer p a{color: #444;text-decoration: none;}
 
 .inner{width: 980px;margin: 0 auto;position: relative;height: 100%;}
-
+.hide{display: none!important;}
