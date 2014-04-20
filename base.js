@@ -274,7 +274,7 @@ function start(){
 																																																												handReset('+=0','+=0');
 																																																												// 帧30->帧7
 																																																												backFrame(0,-23);
-																																																												end();
+																																																												end(pgChangeVelocity+500);
 																																																											});
 																																																										});
 																																																									});
@@ -337,7 +337,8 @@ function start(){
 }
 
 // 结束动画
-function end(){
+function end(dl){
+	var _dl = dl||0;
 	var $end = $('.end');
 	var $opt = $('#opt');//操作手掌
 	var $inner = $('.iphone-inner');//操作手掌
@@ -354,16 +355,16 @@ function end(){
 	$end.removeClass('hide');
 
 	// 手掌隐藏
-	$opt.animate({
+	$opt.delay(_dl).animate({
 		opacity: 0},
-		1200, function() {
+		2000, function() {
 		$(this).addClass('hide');
 	});
 
 	// 内容隐藏
-	$inner.animate({
+	$inner.delay(_dl).animate({
 		opacity: 0},
-		1200, function() {
+		2000, function() {
 		$(this).addClass('hide');
 		// 输入框1
 		var endinput1Inter = setInterval(function(){
@@ -512,6 +513,7 @@ function pg15act(){
 			}
 			var text = num[input3Index%10];
 			$input3.text(text);
+			$input3.addClass('page15inputActive');//数字变绿
 			input3Index++;
 		},numTextVelocity);
 
@@ -521,6 +523,7 @@ function pg15act(){
 			}
 			var text = num[input2Index%10];
 			$input2.text(text);
+			$input2.addClass('page15inputActive');
 			input2Index++;
 		},numTextVelocity*10);
 
@@ -530,6 +533,7 @@ function pg15act(){
 			}
 			var text = num[input1Index%10];
 			$input1.text(text);
+			$input1.addClass('page15inputActive');
 			input1Index++;
 		},numTextVelocity*100);
 	});
