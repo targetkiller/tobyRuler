@@ -8,12 +8,13 @@ var bgChangeVelocity = 800;//背景切换速度
 var pgChangeVelocity = 800;//页面切换速度
 var showPageWait = 200;//页面停顿时间
 var inputTextVelocity = 200;//登录框打字速度
-var infoShowVelocity = 400;//提示框显示速度
-var infoShowDuration = 3500;//提示框持续时间
+var infoShowVelocity = 350;//提示框显示速度
+var infoShowDuration = 3000;//提示框持续时间
+var pageShowDuration = 2000;//展示持续时间
 var numTextVelocity = 5;//数字变动速度
 var numValue = 160;//测身高时候的值
 var dotMoveSpeed = 500;//测身材比例时候的按钮移动速度
-var barMoveSpeed = 1000;//测身材比例时候的bar移动速度
+var barMoveSpeed = 800;//测身材比例时候的bar移动速度
 var endTextSpeed = 100;//最后现实字的速度
 
 var nowPageIndex = 1;
@@ -94,7 +95,7 @@ function start(){
 																handReset('+=0','+=0');
 																// 帧9->帧10
 																nextFrame(0);
-																handMove('372px','175px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																	handReset('+=0','+=0');
 																	// 帧10->帧9
 																	backFrame(0);
@@ -106,7 +107,7 @@ function start(){
 																			handReset('+=0','+=0');
 																			// 帧11->帧11info
 																			pginfoShow();
-																			handMove('594px','172px',500,infoShowDuration+infoShowVelocity,1,function(){
+																			handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
 																				handReset('+=0','+=0');
 																				// 帧11info->帧11
 																				pginfoHide();
@@ -114,7 +115,7 @@ function start(){
 																					handReset('+=0','+=0');
 																					// 帧11->帧14
 																					nextFrame(0,3);
-																					handMove('374px','172px',800,infoShowDuration+pgChangeVelocity,1,function(){
+																					handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
 																						handReset('+=0','+=0');
 																						// 帧14->帧11
 																						backFrame(0,-3);
@@ -152,7 +153,7 @@ function start(){
 																														handReset('+=0','+=0');
 																														// 帧16->帧17
 																														nextFrame(0);
-																														handMove('372px','175px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																														handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																															handReset('+=0','+=0');
 																															// 帧17->帧16
 																															backFrame(0);
@@ -164,7 +165,7 @@ function start(){
 																																	handReset('+=0','+=0');
 																																	// 帧18->帧18info
 																																	pginfoShow();
-																																	handMove('594px','172px',500,infoShowDuration+infoShowVelocity,1,function(){
+																																	handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
 																																		handReset('+=0','+=0');
 																																		// 帧18info->帧18
 																																		pginfoHide();
@@ -172,7 +173,7 @@ function start(){
 																																			handReset('+=0','+=0');
 																																			// 帧18->帧21
 																																			nextFrame(0,3);
-																																			handMove('374px','172px',800,infoShowDuration+pgChangeVelocity,1,function(){
+																																			handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
 																																				handReset('+=0','+=0');
 																																				// 帧21->帧18
 																																				backFrame(0,-3);
@@ -206,7 +207,7 @@ function start(){
 																																											handReset('+=0','+=0');
 																																											// 帧24->帧25
 																																											nextFrame(0);
-																																											handMove('372px','175px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																											handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																												handReset('+=0','+=0');
 																																												// 帧25->帧24
 																																												backFrame(0);
@@ -218,7 +219,7 @@ function start(){
 																																														handReset('+=0','+=0');
 																																														// 帧26->帧26info
 																																														pginfoShow();
-																																														handMove('594px','172px',500,infoShowDuration+infoShowVelocity,1,function(){
+																																														handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
 																																															handReset('+=0','+=0');
 																																															// 帧26info->帧26
 																																															pginfoHide();
@@ -226,7 +227,7 @@ function start(){
 																																																handReset('+=0','+=0');
 																																																// 帧26->帧29
 																																																nextFrame(0,3);
-																																																handMove('374px','172px',800,infoShowDuration+pgChangeVelocity,1,function(){
+																																																handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
 																																																	handReset('+=0','+=0');
 																																																	// 帧29->帧26
 																																																	backFrame(0,-3);
@@ -250,7 +251,7 @@ function start(){
 																																																						handReset('+=0','+=0');
 																																																						// 帧30->帧32 好友列表
 																																																						nextFrame(0,2);
-																																																						handMove('374px','172px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																																						handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																							handReset('+=0','+=0');
 																																																							// 帧32->帧30
 																																																							backFrame(0,-2);
@@ -258,7 +259,7 @@ function start(){
 																																																								handReset('+=0','+=0');
 																																																								// 帧30->帧31
 																																																								nextFrame(0);
-																																																								handMove('374px','172px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																																								handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																									handReset('+=0','+=0');
 																																																									// 帧31->帧30
 																																																									backFrame(0.-1);
@@ -266,7 +267,7 @@ function start(){
 																																																										handReset('+=0','+=0');
 																																																										// 帧30->帧33
 																																																										nextFrame(0,3);
-																																																										handMove('374px','172px',800,pgChangeVelocity+infoShowDuration,1,function(){
+																																																										handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																											handReset('+=0','+=0');
 																																																											// 帧33->帧30
 																																																											backFrame(0,-3);
@@ -384,13 +385,13 @@ function end(dl){
 	var endinput2Len = text2.length;
 
 	// 开始结束层
-	$end.removeClass('hide');
 
 	// 手掌隐藏
 	$opt.delay(_dl).animate({
 		opacity: 0},
 		2000, function() {
 		$(this).addClass('hide');
+		$end.removeClass('hide');
 	});
 
 	// 内容隐藏
