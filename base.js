@@ -42,7 +42,7 @@ function start(){
 	handMove('375px','580px',1500,0,1,function(){
 		handReset('+=0','+=0');
 		// 帧1->帧2
-		nextFrame(0);
+		firstFrame();
 		handMove('526px','320px',800,pgChangeVelocity,1,function(){
 			handReset('+=0','+=0');
 			// 帧2->帧3
@@ -333,6 +333,38 @@ function start(){
 				});
 			});
 		});
+	});
+}
+
+// 第一帧
+function firstFrame(){
+	var $bg1 = $('.bg1');
+	var $bg2 = $('.bg2');
+	var $pg1 = $('.page1');
+	var $pg2 = $('.page2');
+
+	$bg1.animate({
+		opacity: 0.5},
+		bgChangeVelocity, function() {
+		$(this).addClass('hide');
+	});
+
+	$bg2.animate({
+		opacity: 1},
+		bgChangeVelocity, function() {
+		nowBgIndex++;
+	});
+
+	$pg1.animate({
+		opacity: 0},
+		pgChangeVelocity, function() {
+		$(this).addClass('hide');
+	});
+
+	$pg2.animate({
+		opacity: 1},
+		pgChangeVelocity, function() {
+		nowPageIndex++;
 	});
 }
 
