@@ -4,4 +4,18 @@
  * @date:2014-04-14;
  * @content:关于页样式;
 */
+.wrap{width: 980px;margin: 0 auto;margin-top: 50px;position: relative;font-size: 0;letter-spacing: -5px;}
+.avatar{width: 350px;display: inline-block;font-size: 16px;letter-spacing: 0;position: relative;vertical-align: top}
+.avatar .photo{margin-left: 50px;width: 300px;height: auto;}
+.avatar .info{}
+.avatar .info h1{margin: 0;margin: 10px 0;text-align: right;}
+.avatar .info h1 a{text-decoration: none;font-size: 24px;color: #000;font-weight: 100;}
+.avatar .info ul{margin: 0;padding-left: 0;list-style: none}
+.avatar .info ul li{margin-bottom: 5px;text-align: right;}
+.avatar .info ul li:after{content:'/';padding-left: 8px;color: #009999;}
 
+.main{width: 580px;margin-right: 50px;margin-bottom: 80px;display: inline-block;font-size: 16px;letter-spacing: 0;vertical-align: top;padding-top: 125px;color: #777}
+.main p{font-size: 18px;line-height: 30px;}
+.main h1{margin: 0;}
+.main .title{color: #009999;}
+.main .mail{color: #000;text-decoration: none;font-style: italic;}
