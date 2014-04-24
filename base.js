@@ -4,8 +4,8 @@
  * @date:2014-04-14;
  * @content:基础控制;
 */
-var bgChangeVelocity = 800;//背景切换速度
-var pgChangeVelocity = 800;//页面切换速度
+var bgChangeVelocity = 550;//背景切换速度
+var pgChangeVelocity = 550;//页面切换速度
 var showPageWait = 200;//页面停顿时间
 var inputTextVelocity = 200;//登录框打字速度
 var infoShowVelocity = 350;//提示框显示速度
@@ -30,252 +30,276 @@ var $clickdot = $('#clickdot');
 $('.begin-btn').click(function(){
 	$(this).addClass('hide');
 	$('#music')[0].play();
+	$('#clickdot').removeClass('hide');
 	start();
 });
 
-$('#again').click(function(){
-	window.location.reload();
+// 重新播放按钮
+// $('#again').click(function(){
+// 	window.location.reload();
+// });
+
+// 关闭展示按钮
+$('.close-display').click(function(){
+	$('#display').addClass('hide');
 });
+
+// 打开展示按钮
+$('.video-btn').click(function(){
+	$('#display').removeClass('hide');
+});
+
+// 主页侧边栏显示隐藏
+$('#slide-wrap').hover(function(){
+	$("#slide").animate({"right": "0px"}, 200);
+},function(){
+	$("#slide").animate({"right": "-115px"}, 200);
+});	
 
 // 展示开始
 function start(){
 	// 开始->移动到帧
-	handMove('375px','580px',1500,0,1,function(){
+	handMove('597px','281px',1500,0,1,function(){
 		handReset('+=0','+=0');
-		// 帧1->帧2
-		firstFrame();
-		handMove('526px','320px',800,pgChangeVelocity,1,function(){
+		// 帧download->帧1
+		downloadFrame();
+		handMove('375px','580px',1500,0,1,function(){
 			handReset('+=0','+=0');
-			// 帧2->帧3
-			nextFrame(showPageWait);
-			handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
-				handReset('526px','+=0');
-				// 帧3->帧4
+			// 帧1->帧2
+			firstFrame();
+			handMove('526px','490px',800,pgChangeVelocity,1,function(){
+				handReset('+=0','+=0');
+				// 帧2->帧3
 				nextFrame(showPageWait);
-				handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
+				handMove('426px','490px',550,showPageWait,1,function(){
 					handReset('526px','+=0');
-					// 帧4->帧5
+					// 帧3->帧4
 					nextFrame(showPageWait);
-					handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
+					handMove('426px','490px',550,showPageWait,1,function(){
 						handReset('526px','+=0');
-						// 帧5->帧6
+						// 帧4->帧5
 						nextFrame(showPageWait);
-						handMove('406px','+=0',pgChangeVelocity,showPageWait,1,function(){
-							handReset('526px','+=0');
-							handMove('566px','+=10',pgChangeVelocity,0,1,function(){
-								handReset('+=0','+=0');
-								pg6input1TextIn();
-								handMove('566px','+=40',200,inputTextVelocity*9,1,function(){
+						handMove('426px','490px',pgChangeVelocity,showPageWait,1,function(){
+							handReset('526px','490px');
+							// 帧5->帧6
+							nextFrame(showPageWait);
+							handMove('426px','320px',pgChangeVelocity,showPageWait,1,function(){
+								handReset('526px','+=0');
+								handMove('566px','+=10',pgChangeVelocity,0,1,function(){
 									handReset('+=0','+=0');
-									pg6input2TextIn();
-									handMove('566px','430px',200,inputTextVelocity*6,1,function(){
+									pg6input1TextIn();
+									handMove('566px','+=40',200,inputTextVelocity*9,1,function(){
 										handReset('+=0','+=0');
-										// 帧6->帧7
-										nextFrame();
-										handMove('416px','400px',800,pgChangeVelocity,1,function(){
+										pg6input2TextIn();
+										handMove('566px','430px',200,inputTextVelocity*6,1,function(){
 											handReset('+=0','+=0');
-											// 帧7->帧8
-											nextFrame(0);
-											handMove('601px','165px',800,pgChangeVelocity,1,function(){
+											// 帧6->帧7
+											nextFrame();
+											handMove('416px','400px',800,pgChangeVelocity,1,function(){
 												handReset('+=0','+=0');
-												// 帧8->帧8info
-												pginfoShow(0);
-												handMove('360px','165px',500,infoShowDuration+infoShowVelocity,1,function(){
+												// 帧7->帧8
+												nextFrame(0);
+												handMove('601px','165px',800,pgChangeVelocity,1,function(){
 													handReset('+=0','+=0');
-													// 帧8info->帧8
-													pginfoHide(0);
-													handMove('480px','405px',800,infoShowVelocity,1,function(){
-														// handReset('+=0','+=0');
-														// 三围检测动画
-														pg8act(function(){
-															handReset('+=0','+=0');
-															// 帧8->帧9
-															nextFrame(0);
-															handMove('550px','505px',800,pgChangeVelocity,1,function(){
+													// 帧8->帧8info
+													pginfoShow(0);
+													handMove('360px','165px',500,infoShowDuration+infoShowVelocity,1,function(){
+														handReset('+=0','+=0');
+														// 帧8info->帧8
+														pginfoHide(0);
+														handMove('480px','405px',800,infoShowVelocity,1,function(){
+															// handReset('+=0','+=0');
+															// 三围检测动画
+															pg8act(function(){
 																handReset('+=0','+=0');
-																// 帧9->帧10
+																// 帧8->帧9
 																nextFrame(0);
-																handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																handMove('550px','505px',800,pgChangeVelocity,1,function(){
 																	handReset('+=0','+=0');
-																	// 帧10->帧9
-																	backFrame(0);
-																	handMove('550px','448px',800,pgChangeVelocity,1,function(){
+																	// 帧9->帧10
+																	nextFrame(0);
+																	handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																		handReset('+=0','+=0');
-																		// 帧9->帧11
-																		nextFrame(0,2);
-																		handMove('570px','338px',800,pgChangeVelocity,1,function(){
+																		// 帧10->帧9
+																		backFrame(0);
+																		handMove('550px','448px',800,pgChangeVelocity,1,function(){
 																			handReset('+=0','+=0');
-																			// 帧11->帧11info
-																			pginfoShow();
-																			handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
+																			// 帧9->帧11
+																			nextFrame(0,2);
+																			handMove('570px','338px',800,pgChangeVelocity,1,function(){
 																				handReset('+=0','+=0');
-																				// 帧11info->帧11
-																				pginfoHide();
-																				handMove('604px','172px',800,infoShowVelocity,1,function(){
+																				// 帧11->帧11info
+																				pginfoShow();
+																				handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
 																					handReset('+=0','+=0');
-																					// 帧11->帧14
-																					nextFrame(0,3);
-																					handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
+																					// 帧11info->帧11
+																					pginfoHide();
+																					handMove('604px','172px',800,infoShowVelocity,1,function(){
 																						handReset('+=0','+=0');
-																						// 帧14->帧11
-																						backFrame(0,-3);
-																						handMove('374px','172px',200,pgChangeVelocity,1,function(){
+																						// 帧11->帧14
+																						nextFrame(0,3);
+																						handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
 																							handReset('+=0','+=0');
-																							// 帧11->帧9
-																							backFrame(0,-2);
+																							// 帧14->帧11
+																							backFrame(0,-3);
 																							handMove('374px','172px',200,pgChangeVelocity,1,function(){
 																								handReset('+=0','+=0');
-																								// 帧9->帧8
-																								backFrame(0,-1);
-																								handMove('364px','172px',200,pgChangeVelocity,1,function(){
+																								// 帧11->帧9
+																								backFrame(0,-2);
+																								handMove('374px','172px',200,pgChangeVelocity,1,function(){
 																									handReset('+=0','+=0');
-																									// 帧8->帧7
+																									// 帧9->帧8
 																									backFrame(0,-1);
-																									handMove('444px','522px',800,pgChangeVelocity,1,function(){
+																									handMove('364px','172px',200,pgChangeVelocity,1,function(){
 																										handReset('+=0','+=0');
-																										// 帧7->帧15
-																										nextFrame(0,8);
-																										handMove('610px','165px',800,pgChangeVelocity,1,function(){
+																										// 帧8->帧7
+																										backFrame(0,-1);
+																										handMove('444px','522px',800,pgChangeVelocity,1,function(){
 																											handReset('+=0','+=0');
-																											// 帧15->帧15info
-																											pginfoShow();
-																											handMove('360px','165px',800,infoShowDuration+infoShowVelocity,1,function(){
+																											// 帧7->帧15
+																											nextFrame(0,8);
+																											handMove('610px','165px',800,pgChangeVelocity,1,function(){
 																												handReset('+=0','+=0');
-																												// 帧15info->帧15
-																												pginfoHide();
-																												handMove('480px','405px',800,infoShowVelocity,1,function(){
-																													// 身高检测动画
-																													pg15act();
-																													// handReset('+=0','+=0');
-																													// 帧15->帧16
-																													nextFrame(numTextVelocity*numValue+infoShowVelocity+1500);
-																													handMove('550px','475px',800,numTextVelocity*numValue+infoShowVelocity+1500+pgChangeVelocity+500,1,function(){
-																														handReset('+=0','+=0');
-																														// 帧16->帧17
-																														nextFrame(0);
-																														handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																												// 帧15->帧15info
+																												pginfoShow();
+																												handMove('360px','165px',800,infoShowDuration+infoShowVelocity,1,function(){
+																													handReset('+=0','+=0');
+																													// 帧15info->帧15
+																													pginfoHide();
+																													handMove('480px','405px',800,infoShowVelocity,1,function(){
+																														// 身高检测动画
+																														pg15act();
+																														// handReset('+=0','+=0');
+																														// 帧15->帧16
+																														nextFrame(numTextVelocity*numValue+infoShowVelocity+1500);
+																														handMove('550px','475px',800,numTextVelocity*numValue+infoShowVelocity+1500+pgChangeVelocity+500,1,function(){
 																															handReset('+=0','+=0');
-																															// 帧17->帧16
-																															backFrame(0);
-																															handMove('550px','418px',800,pgChangeVelocity,1,function(){
+																															// 帧16->帧17
+																															nextFrame(0);
+																															handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																handReset('+=0','+=0');
-																																// 帧16->帧18
-																																nextFrame(0,2);
-																																handMove('570px','338px',800,pgChangeVelocity,1,function(){
+																																// 帧17->帧16
+																																backFrame(0);
+																																handMove('550px','418px',800,pgChangeVelocity,1,function(){
 																																	handReset('+=0','+=0');
-																																	// 帧18->帧18info
-																																	pginfoShow();
-																																	handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
+																																	// 帧16->帧18
+																																	nextFrame(0,2);
+																																	handMove('570px','338px',800,pgChangeVelocity,1,function(){
 																																		handReset('+=0','+=0');
-																																		// 帧18info->帧18
-																																		pginfoHide();
-																																		handMove('604px','172px',800,infoShowVelocity,1,function(){
+																																		// 帧18->帧18info
+																																		pginfoShow();
+																																		handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
 																																			handReset('+=0','+=0');
-																																			// 帧18->帧21
-																																			nextFrame(0,3);
-																																			handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
+																																			// 帧18info->帧18
+																																			pginfoHide();
+																																			handMove('604px','172px',800,infoShowVelocity,1,function(){
 																																				handReset('+=0','+=0');
-																																				// 帧21->帧18
-																																				backFrame(0,-3);
-																																				handMove('374px','172px',200,pgChangeVelocity,1,function(){
+																																				// 帧18->帧21
+																																				nextFrame(0,3);
+																																				handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
 																																					handReset('+=0','+=0');
-																																					// 帧18->帧16
-																																					backFrame(0,-2);
+																																					// 帧21->帧18
+																																					backFrame(0,-3);
 																																					handMove('374px','172px',200,pgChangeVelocity,1,function(){
 																																						handReset('+=0','+=0');
-																																						// 帧16->帧15
-																																						backFrame(0,-1);
-																																						handMove('364px','172px',200,pgChangeVelocity,1,function(){
+																																						// 帧18->帧16
+																																						backFrame(0,-2);
+																																						handMove('374px','172px',200,pgChangeVelocity,1,function(){
 																																							handReset('+=0','+=0');
-																																							// 帧15->帧7
-																																							backFrame(0,-8);
-																																							handMove('584px','392px',800,pgChangeVelocity,1,function(){
+																																							// 帧16->帧15
+																																							backFrame(0,-1);
+																																							handMove('364px','172px',200,pgChangeVelocity,1,function(){
 																																								handReset('+=0','+=0');
-																																								// 帧7->帧23
-																																								nextFrame(0,16);
-																																								handMove('386px','289px',800,pgChangeVelocity,1,function(){
-																																									// handReset('+=0','+=0');
-																																									// 身材比例选项选择动画
-																																									pg23radioact();
-																																									handMove('486px','579px',800,dotMoveSpeed,1,function(){
-																																										handReset('+=0','+=0');
-																																										// 身材比例检测动画
-																																										pg23act();
-																																										// 帧23->帧24
-																																										nextFrame(barMoveSpeed*2);
-																																										handMove('550px','505px',800,barMoveSpeed*2+pgChangeVelocity,1,function(){
+																																								// 帧15->帧7
+																																								backFrame(0,-8);
+																																								handMove('584px','392px',800,pgChangeVelocity,1,function(){
+																																									handReset('+=0','+=0');
+																																									// 帧7->帧23
+																																									nextFrame(0,16);
+																																									handMove('386px','289px',800,pgChangeVelocity,1,function(){
+																																										// handReset('+=0','+=0');
+																																										// 身材比例选项选择动画
+																																										pg23radioact();
+																																										handMove('486px','579px',800,dotMoveSpeed,1,function(){
 																																											handReset('+=0','+=0');
-																																											// 帧24->帧25
-																																											nextFrame(0);
-																																											handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																																											// 身材比例检测动画
+																																											pg23act();
+																																											// 帧23->帧24
+																																											nextFrame(barMoveSpeed*2);
+																																											handMove('550px','505px',800,barMoveSpeed*2+pgChangeVelocity,1,function(){
 																																												handReset('+=0','+=0');
-																																												// 帧25->帧24
-																																												backFrame(0);
-																																												handMove('550px','455px',800,pgChangeVelocity,1,function(){
+																																												// 帧24->帧25
+																																												nextFrame(0);
+																																												handMove('372px','175px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																													handReset('+=0','+=0');
-																																													// 帧24->帧26
-																																													nextFrame(0,2);
-																																													handMove('570px','338px',800,pgChangeVelocity,1,function(){
+																																													// 帧25->帧24
+																																													backFrame(0);
+																																													handMove('550px','455px',800,pgChangeVelocity,1,function(){
 																																														handReset('+=0','+=0');
-																																														// 帧26->帧26info
-																																														pginfoShow();
-																																														handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
+																																														// 帧24->帧26
+																																														nextFrame(0,2);
+																																														handMove('570px','338px',800,pgChangeVelocity,1,function(){
 																																															handReset('+=0','+=0');
-																																															// 帧26info->帧26
-																																															pginfoHide();
-																																															handMove('604px','172px',800,infoShowVelocity,1,function(){
+																																															// 帧26->帧26info
+																																															pginfoShow();
+																																															handMove('594px','172px',500,pageShowDuration+infoShowVelocity,1,function(){
 																																																handReset('+=0','+=0');
-																																																// 帧26->帧29
-																																																nextFrame(0,3);
-																																																handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
+																																																// 帧26info->帧26
+																																																pginfoHide();
+																																																handMove('604px','172px',800,infoShowVelocity,1,function(){
 																																																	handReset('+=0','+=0');
-																																																	// 帧29->帧26
-																																																	backFrame(0,-3);
-																																																	handMove('374px','172px',200,pgChangeVelocity,1,function(){
+																																																	// 帧26->帧29
+																																																	nextFrame(0,3);
+																																																	handMove('374px','172px',800,pageShowDuration+pgChangeVelocity,1,function(){
 																																																		handReset('+=0','+=0');
-																																																		// 帧26->帧24
-																																																		backFrame(0,-2);
+																																																		// 帧29->帧26
+																																																		backFrame(0,-3);
 																																																		handMove('374px','172px',200,pgChangeVelocity,1,function(){
 																																																			handReset('+=0','+=0');
-																																																			// 帧24->帧23
-																																																			backFrame(0,-1);
-																																																			handMove('364px','172px',200,pgChangeVelocity,1,function(){
+																																																			// 帧26->帧24
+																																																			backFrame(0,-2);
+																																																			handMove('374px','172px',200,pgChangeVelocity,1,function(){
 																																																				handReset('+=0','+=0');
-																																																				// 帧23->帧7
-																																																				backFrame(0,-16);
-																																																				handMove('562px','520px',800,pgChangeVelocity,1,function(){
+																																																				// 帧24->帧23
+																																																				backFrame(0,-1);
+																																																				handMove('364px','172px',200,pgChangeVelocity,1,function(){
 																																																					handReset('+=0','+=0');
-																																																					// 帧7->帧30
-																																																					nextFrame(0,23);
-																																																					handMove('538px','410px',800,pgChangeVelocity,1,function(){
+																																																					// 帧23->帧7
+																																																					backFrame(0,-16);
+																																																					handMove('562px','520px',800,pgChangeVelocity,1,function(){
 																																																						handReset('+=0','+=0');
-																																																						// 帧30->帧32 好友列表
-																																																						nextFrame(0,2);
-																																																						handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																																																						// 帧7->帧30
+																																																						nextFrame(0,23);
+																																																						handMove('538px','410px',800,pgChangeVelocity,1,function(){
 																																																							handReset('+=0','+=0');
-																																																							// 帧32->帧30
-																																																							backFrame(0,-2);
-																																																							handMove('538px','450px',800,pgChangeVelocity,1,function(){
+																																																							// 帧30->帧32 好友列表
+																																																							nextFrame(0,2);
+																																																							handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																								handReset('+=0','+=0');
-																																																								// 帧30->帧31
-																																																								nextFrame(0);
-																																																								handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																																																								// 帧32->帧30
+																																																								backFrame(0,-2);
+																																																								handMove('538px','450px',800,pgChangeVelocity,1,function(){
 																																																									handReset('+=0','+=0');
-																																																									// 帧31->帧30
-																																																									backFrame(0.-1);
-																																																									handMove('538px','500px',800,pgChangeVelocity,1,function(){
+																																																									// 帧30->帧31
+																																																									nextFrame(0);
+																																																									handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																										handReset('+=0','+=0');
-																																																										// 帧30->帧33
-																																																										nextFrame(0,3);
-																																																										handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																																																										// 帧31->帧30
+																																																										backFrame(0.-1);
+																																																										handMove('538px','500px',800,pgChangeVelocity,1,function(){
 																																																											handReset('+=0','+=0');
-																																																											// 帧33->帧30
-																																																											backFrame(0,-3);
-																																																											handMove('364px','172px',800,pgChangeVelocity,1,function(){
+																																																											// 帧30->帧33
+																																																											nextFrame(0,3);
+																																																											handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																												handReset('+=0','+=0');
-																																																												// 帧30->帧7
-																																																												backFrame(0,-23);
-																																																												end(pgChangeVelocity+500);
+																																																												// 帧33->帧30
+																																																												backFrame(0,-3);
+																																																												handMove('364px','172px',800,pgChangeVelocity,1,function(){
+																																																													handReset('+=0','+=0');
+																																																													// 帧30->帧7
+																																																													backFrame(0,-23);
+																																																													end(pgChangeVelocity+500);
+																																																												});
 																																																											});
 																																																										});
 																																																									});
@@ -334,6 +358,38 @@ function start(){
 				});
 			});
 		});
+	});
+}
+
+// 介绍页
+function downloadFrame(){
+	var $bg1 = $('.bgdownload');
+	var $bg2 = $('.bg1');
+	var $pg1 = $('.pagedownload');
+	var $pg2 = $('.page1');
+
+	$bg1.animate({
+		opacity: 0.5},
+		bgChangeVelocity, function() {
+		$(this).addClass('hide');
+	});
+
+	$bg2.animate({
+		opacity: 1},
+		bgChangeVelocity, function() {
+		// nowBgIndex++;
+	});
+
+	$pg1.animate({
+		opacity: 0},
+		pgChangeVelocity, function() {
+		$(this).addClass('hide');
+	});
+
+	$pg2.animate({
+		opacity: 1},
+		pgChangeVelocity, function() {
+		// nowPageIndex++;
 	});
 }
 
@@ -677,7 +733,7 @@ function pg6input2TextIn(){
 // 移动操作手
 // l:left,t:top,d:duration,dl:delay,dot:1/0 是否显示点
 function handMove(l,t,d,dl,dot,callback){
-	$opt.removeClass('hide');
+	// $opt.removeClass('hide');
 	if(dot==1){
 		// $clickdot.removeClass('hide');
 		$clickdot.css('opacity',1);
@@ -703,9 +759,9 @@ function handReset(l,t,callback){
 	var _l = l||'+=0';
 	var _t = t||'+=0';
 	// $opt.addClass('hide');
-	$opt.css({left:_l,top:_t,opacity:0.5})
-	$clickdot.css('opacity',0);
-	$clickdot.addClass('hide');
+	$opt.css({left:_l,top:_t,opacity:0.5});
+	// $clickdot.css('opacity',0);
+	// $clickdot.addClass('hide');
 }
 
 // 切换上一帧
@@ -748,6 +804,14 @@ function backFrame(dl,dis){
 		opacity: 1},
 		pgChangeVelocity, function() {
 		nowPageIndex+=_dis;
+		// 23页背景变白色
+		if(nowPageIndex==23){
+			$('.pagebackground').css('background-color','#fff');
+		}
+		else{
+			$('.pagebackground').css('background-color','#000');
+
+		}
 	});	
 }
 
@@ -798,6 +862,14 @@ function nextFrame(dl,dis){
 		opacity: 1},
 		pgChangeVelocity, function() {
 		nowPageIndex+=_dis;
+		// 23页背景变白色
+		if(nowPageIndex==23){
+			$('.pagebackground').css('background-color','#fff');
+		}
+		else{
+			$('.pagebackground').css('background-color','#000');
+
+		}
 		// 14,21,29发表页
 		if(nowPageIndex==14||nowPageIndex==21||nowPageIndex==29){
 			$('.focus-input').focus().val(' ');

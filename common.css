@@ -11,14 +11,14 @@ body{margin: 0;-webkit-font-smoothing: antialiased;
 	/*font-weight: lighter;*/
 }
 
-header{height: 50px;width: 100%;background-color: #444;}
-header .logo{position: absolute;width: 120px;height: 40px;top: 5px;}
+header{height: 50px;width: 100%;background-color: #0f2d38;}
+header .logo{position: absolute;width: 110px;height: 45px;top: 0px;}
 header .logo a{display: inline-block;width: 100%;height: 100%;}
 header .logo img{display: inline-block;width: 100%;height: 100%;}
 header nav{}
-header nav ul{list-style: none;position: absolute;right: 0;top: 0;margin: 0;padding-left: 0;}
-header nav ul li{display: inline-block;width: 55px;height: 50px;}
-header nav ul li a{display: inline-block;width: 100%;height: 100%;line-height: 50px;text-decoration: none;color: #fff;font-size: 14px;text-align: right;}
+header nav ul{list-style: none;margin: 0;padding-left: 0;margin-left: 125px;}
+header nav ul li{display: inline-block;width: 55px;height: 50px;vertical-align: top;}
+header nav ul li a{display: inline-block;width: 100%;height: 100%;line-height: 50px;text-decoration: none;color: #7c889a;font-size: 14px;text-align: center;}
 header nav ul li a:hover{color: #ddd;}
 
 footer{height: 100px;width: 100%;background-color: #fff;border-top: 1px solid #ddd;}
