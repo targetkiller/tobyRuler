@@ -41,7 +41,8 @@ $('.begin-btn').click(function(){
 
 // 关闭展示按钮
 $('.close-display').click(function(){
-	$('#display').addClass('hide');
+	// $('#display').addClass('hide');
+	window.location.reload('#function');
 });
 
 // 打开展示按钮
