@@ -11,9 +11,17 @@
 #slide{width: 125px;position: fixed;top: 200px;right: -115px;}
 #slide ul{margin: 0;padding-left: 0;list-style: none;}
 #slide ul li{display: inline-block;display: block;margin-bottom: 5px;}
-#slide ul li a{display: inline-block;display: block;text-align: center;color: #00d588;text-decoration: none;font-size: 14px;background-color: #fff;
-	height: 50px;line-height: 50px;border-radius: 25px 0 0 25px;cursor: pointer;box-shadow: 0 1px 1px #888;transition:all 0.2s ease-in;}
+#slide ul li a{display: inline-block;display: block;text-align: left;color: #00d588;text-decoration: none;font-size: 14px;background-color: #fff;
+	height: 50px;line-height: 50px;border-radius: 25px 0 0 25px;cursor: pointer;box-shadow: 0 1px 1px #888;transition:all 0.2s ease-in;
+	padding-left: 30px;}
 #slide ul li a:hover{background-color: #00d588;color: #fff;}
+.icon{width: 20px;height: 20px;background-size: 20px 20px;display: inline-block;margin-right: 5px;}
+#slide ul li .icon-download{background-image: url(img/icon-download.png);vertical-align: -4px;}
+#slide ul li .icon-setting{background-image: url(img/icon-setting.png);vertical-align: -4px;}
+#slide ul li .icon-calendar{background-image: url(img/icon-calendar.png);vertical-align: -5px;}
+#slide ul li a:hover .icon-download{background-image: url(img/icon-download-white.png);}
+#slide ul li a:hover .icon-setting{background-image: url(img/icon-setting-white.png);}
+#slide ul li a:hover .icon-calendar{background-image: url(img/icon-calendar-white.png);}
 
 .frame{position: relative;}
 .frame img{display: block;width: 100%;height: auto;}
@@ -37,3 +45,5 @@
 .fexp3-input{position: absolute;top: 245px;left: 681px;display: inline-block;width: 297px;height: 54px;border: 0;font-size: 18px;line-height: 24px;color: #999;background-color: #f5f5f3}
 .fexp3-input:focus{outline: none;}
 .fexp3-btn{position: absolute;top: 245px;left: 982px;display: inline-block;width: 125px;height: 57px;}
+.fdownloadpg-panel{position: absolute;top: 331px;left: 452px;display: inline-block;width: 590px;height: 545px;overflow-x:auto;}
+.fdownloadpg-panel img{height: 100%;width: auto;}

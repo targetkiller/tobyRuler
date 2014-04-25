@@ -283,23 +283,27 @@ function start(){
 																																																									handReset('+=0','+=0');
 																																																									// 帧30->帧31
 																																																									nextFrame(0);
-																																																									handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																																																									handMove('388px','436px',800,pgChangeVelocity+500,1,function(){
 																																																										handReset('+=0','+=0');
-																																																										// 帧31->帧30
-																																																										backFrame(0.-1);
-																																																										handMove('538px','500px',800,pgChangeVelocity,1,function(){
+																																																										addHeart();
+																																																										handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																											handReset('+=0','+=0');
-																																																											// 帧30->帧33
-																																																											nextFrame(0,3);
-																																																											handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
+																																																											// 帧31->帧30
+																																																											backFrame(0,-1);
+																																																											handMove('538px','500px',800,pgChangeVelocity,1,function(){
 																																																												handReset('+=0','+=0');
-																																																												// 帧33->帧30
-																																																												backFrame(0,-3);
-																																																												handMove('364px','172px',800,pgChangeVelocity,1,function(){
+																																																												// 帧30->帧33
+																																																												nextFrame(0,3);
+																																																												handMove('374px','172px',800,pgChangeVelocity+pageShowDuration,1,function(){
 																																																													handReset('+=0','+=0');
-																																																													// 帧30->帧7
-																																																													backFrame(0,-23);
-																																																													end(pgChangeVelocity+500);
+																																																													// 帧33->帧30
+																																																													backFrame(0,-3);
+																																																													handMove('364px','172px',800,pgChangeVelocity,1,function(){
+																																																														handReset('+=0','+=0');
+																																																														// 帧30->帧7
+																																																														backFrame(0,-23);
+																																																														end(pgChangeVelocity+500);
+																																																													});
 																																																												});
 																																																											});
 																																																										});
@@ -359,6 +363,24 @@ function start(){
 				});
 			});
 		});
+	});
+}
+
+// 点赞动画
+function addHeart(){
+	$('.heart1').removeClass('hide');
+	$('.heart1').animate({
+		width: 28,
+		height: 28,
+		left: '-=7px',
+		top: '-=7px',
+		opacity: 0},
+		500, function() {
+	});
+	$('.heart2').delay(400).animate({
+		opacity: 1},
+		100, function() {
+		/* stuff to do after animation is complete */
 	});
 }
 

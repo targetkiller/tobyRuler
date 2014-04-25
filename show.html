@@ -61,7 +61,7 @@
 				<div class="front">
 					<div class="iphone">
 						<div class="iphone-inner">
-							<div class="page pagedownload"></div>
+							<div class="page pagedownload hide"></div>
 							<div class="page page1" style="opacity:0;left:0"></div>
 							<div class="page page2" style="opacity:0;left:0"></div>
 							<div class="page page3 hide"></div>
@@ -128,12 +128,15 @@
 								<input type="text" class="focus-input" />
 							</div>
 							<div class="page page30 hide"></div>
-							<div class="page page31 hide"></div>
+							<div class="page page31" style="opacity:1;left:0">
+								<img src="img/heart.png" class="heart1 hide">
+								<img src="img/heart.png" class="heart2" style="opacity:0">
+							</div>
 							<div class="page page32 hide"></div>
 							<div class="page page33 hide"></div>
 						</div>
 						<div class="tab-head"></div>
-						<div class="begin-btn"></div>
+						<div class="begin-btn hide"></div>
 						<div class="pagebackground"></div>
 						<div class="end hide">
 							<input type="text" class="end-input1" />
@@ -154,11 +157,11 @@
 		<audio src="clocks.mp3" class="hide" id="music" controls="controls">Your browser does not support the audio element.</audio>
 	</div>
 
-	<footer>
+	<!-- <footer>
 		<div class="inner">
 			<p>design by <a href="">PJ.Ng</a></p>
 		</div>
-	</footer>
+	</footer> -->
 
 	<script src="jquery.js"></script>
 	<script src="base.js"></script>

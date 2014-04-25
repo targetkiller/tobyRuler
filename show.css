@@ -20,9 +20,9 @@
 
 /* 基本属性 */
 #display{background-color: #eee;height: 100%;width: 100%;position: fixed;top: 0;left: 0;background-color: #000;}
-#display .close-display{position: absolute;top: 20px;right: 20px;width: 40px;height: 40px;
-	border-radius: 20px;text-align: center;line-height: 35px;text-decoration: none;display: inline-block;
-	color: #007700;font-size: 32px;transition:all .3s ease-out;background-color: #333;z-index: 9999;}
+#display .close-display{position: absolute;top: 20px;right: 31px;width: 80px;height: 80px;font-weight: lighter;
+	border-radius: 40px;text-align: center;line-height: 67px;text-decoration: none;display: inline-block;
+	color: #fff;font-size: 60px;transition:all .3s ease-out;background-color: #333;z-index: 9999;}
 #display .close-display:hover{background-color: #fff;color: #000;}
 #display img{display: block;/*解决底部3px*/}
 #display .frame{position: relative;height: 640px;width: 980px;overflow: hidden;}
@@ -50,6 +50,7 @@
 #display .front .end #again{color: #fff;background-color: #077;position: absolute;left: 90px;top: 255px;width: 87px;height: 30px;line-height: 27px;font-size: 25px;opacity: 0;cursor: pointer;
 	font-weight: lighter;font-family: 'Helvetica Neue';text-align: center;padding: 2px 0;transition:all .2s ease-in;-webkit-transition:all .2s ease-in;text-decoration: none;display: block;}
 #display .front .end #again:hover{background-color: #099;}
+#display .heart1,#display .heart2{display: inline-block;width: 14px;height: 14px;position: absolute;top: 298px;left: 20px;}
 
 /* 异化场景 */
 #display .front .pg6-input{position: absolute;top: 185px;border: none;width: 222px;left: 26px;height: 35px;line-height: 25px;border-radius: 6px;font-size: 16px;text-align: center}
