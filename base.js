@@ -4,11 +4,11 @@
  * @date:2014-04-14;
  * @content:基础控制;
 */
-var bgChangeVelocity = 550;//背景切换速度
+var bgChangeVelocity = 0;//背景切换速度
 var pgChangeVelocity = 550;//页面切换速度
 var showPageWait = 200;//页面停顿时间
 var inputTextVelocity = 200;//登录框打字速度
-var infoShowVelocity = 350;//提示框显示速度
+var infoShowVelocity = 300;//提示框显示速度
 var infoShowDuration = 3000;//提示框持续时间
 var pageShowDuration = 2000;//展示持续时间
 var numTextVelocity = 5;//数字变动速度
@@ -465,18 +465,24 @@ function end(dl){
 
 	// 开始结束层
 
+	$end.removeClass('hide');
+	$end.css({opacity: '0'});
 	// 手掌隐藏
 	$opt.delay(_dl).animate({
 		opacity: 0},
-		2000, function() {
+		1000, function() {
 		$(this).addClass('hide');
-		$end.removeClass('hide');
+	});
+
+	$end.delay(1000).animate({
+		opacity: 1},
+		800, function() {
 	});
 
 	// 内容隐藏
 	$inner.delay(_dl).animate({
 		opacity: 0},
-		2000, function() {
+		1000, function() {
 		$(this).addClass('hide');
 		// 输入框1
 		var endinput1Inter = setInterval(function(){
@@ -707,7 +713,13 @@ function pginfoShow(d){
 	var _d = d||0;
 	// 显示提示页
 	var $pginfo = $('.page'+nowPageIndex+'info');
-	$pginfo.slideDown(infoShowVelocity);
+	$pginfo.css({opacity: '0.4',left: '0',top:'491px'});
+	$pginfo.animate({
+		opacity: 1,
+		top: 0},
+		infoShowVelocity, function() {
+	});
+	// $pginfo.slideDown(infoShowVelocity);
 }
 
 // 收起提示页 pg8,pg11,pg15,pg18,pg26
@@ -716,7 +728,12 @@ function pginfoHide(d){
 	var _d = d||0;
 	// 显示提示页
 	var $pginfo = $('.page'+nowPageIndex+'info');
-	$pginfo.slideUp(infoShowVelocity);
+	$pginfo.animate({
+		opacity: 0.4,
+		top: '491px'},
+		infoShowVelocity, function() {
+	});
+	// $pginfo.slideUp(infoShowVelocity);
 }
 
 // 登录框输入账号
@@ -725,7 +742,7 @@ function pg6input1TextIn(){
 	$pg6input1.focus();
 	var accountNum = 9;
 	var accountIndex = 0;
-	var account = ['3','6','9','1','6','0','0','2','0'];
+	var account = ['5','1','1','7','2','7','3','0','0'];
 	var accountInter = setInterval(function(){
 		if(accountIndex == (accountNum-1)){
 			clearInterval(accountInter);
@@ -797,15 +814,17 @@ function backFrame(dl,dis){
 	var $bgbefore = $('.bg'+nowBgIndex);
 	var $bgafter = $('.bg'+(nowBgIndex+_dis));
 	$bgbefore.delay(_dl).animate({
-		left:'+='+bgChangeOffset,
+		// left:'+='+bgChangeOffset,
 		opacity: 0.2},
 		bgChangeVelocity, function() {
 		$(this).addClass('hide');
+		$(this).css({left:'-200px'});
 	});
 
 	$bgafter.removeClass('hide');
+	$bgafter.css({left: '0'});
 	$bgafter.delay(_dl).animate({
-		left:'+='+bgChangeOffset,
+		// left:'+='+bgChangeOffset,
 		opacity: 1},
 		bgChangeVelocity, function() {
 		nowBgIndex+=_dis;
@@ -854,16 +873,19 @@ function nextFrame(dl,dis){
 	// 变换背景
 	var $bgbefore = $('.bg'+nowBgIndex);
 	var $bgafter = $('.bg'+(nowBgIndex+_dis));
+	
 	$bgbefore.delay(_dl).animate({
-		left:'-='+bgChangeOffset,
+		// left:'-='+bgChangeOffset,
 		opacity: 0.2},
 		bgChangeVelocity, function() {
 		$(this).addClass('hide');
+		$(this).css({left: '-200px'});
 	});
 
 	$bgafter.removeClass('hide');
+	$bgafter.css({opacity: '0',left: '0'});
 	$bgafter.delay(_dl).animate({
-		left:'-='+bgChangeOffset,
+		// left:'-='+bgChangeOffset,
 		opacity: 1},
 		bgChangeVelocity, function() {
 		nowBgIndex+=_dis;

@@ -45,11 +45,11 @@
 #display .front .end .end-input2{position: absolute;border: none;width: 275px;left: 0px;height: 55px;line-height: 25px;font-weight: lighter;font-family: 'Helvetica Neue';text-align: center;background-color: #000;}
 #display .front .end .end-input1:focus,
 #display .front .end .end-input2:focus{outline: none;}
-#display .front .end .end-input1{top: 135px;font-size: 35px;color: #077;}
-#display .front .end .end-input2{top: 185px;font-size: 20px;color: #fff;}
-#display .front .end #again{color: #fff;background-color: #077;position: absolute;left: 90px;top: 255px;width: 87px;height: 30px;line-height: 27px;font-size: 25px;opacity: 0;cursor: pointer;
+#display .front .end .end-input1{top: 135px;font-size: 35px;color: #87D41F;}
+#display .front .end .end-input2{top: 185px;font-size: 18px;color: #fff;}
+#display .front .end #again{color: #000;background-color: #87D41F;position: absolute;left: 80px;top: 255px;width: 107px;height: 40px;line-height: 37px;font-size: 25px;opacity: 0;cursor: pointer;border-radius: 50px;
 	font-weight: lighter;font-family: 'Helvetica Neue';text-align: center;padding: 2px 0;transition:all .2s ease-in;-webkit-transition:all .2s ease-in;text-decoration: none;display: block;}
-#display .front .end #again:hover{background-color: #099;}
+#display .front .end #again:hover{background-color: #73ba13;}
 #display .heart1,#display .heart2{display: inline-block;width: 14px;height: 14px;position: absolute;top: 298px;left: 20px;}
 
 /* 异化场景 */
