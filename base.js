@@ -735,6 +735,13 @@ function pginfoHide(d){
 	});
 	// $pginfo.slideUp(infoShowVelocity);
 }
+// 登录验证
+function validate(){
+	var validate = "";
+	var validatePSD = "";
+
+	for(var i = 0; i)
+}
 
 // 登录框输入账号
 function pg6input1TextIn(){
